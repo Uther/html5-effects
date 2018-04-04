@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Blindify jQuery plugin - vertical demo #2</title>
+    <meta name="description" content="Blindify jQuery plugin - vertical demo #2" />
+    <link rel="stylesheet" href="../blindify.min.css" media="all" />
+    <link rel="stylesheet" href="demo.css" media="all" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../jquery.blindify.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#blindify').blindify({
+                numberOfBlinds: 15,
+                margin: 5,
+                gapHeight: 200,
+                animationSpeed: 500
+            });
+        });
+	</script>
+</head>
+<body>
+    <article class="container">
+        <h1>Blindify</h1>
+        <nav class="top">
+            <ul>
+                <li><a href="vertical_1.html">Vertical 1</a></li>
+                <li><a href="vertical_2.html" class="active">Vertical 2</a></li>
+                <li><a href="horizontal_1.html">Horizontal 1</a></li>
+                <li><a href="horizontal_2.html">Horizontal 2</a></li>
+            </ul>
+        </nav>
+        <section id="blindify">
+            <ul>
+                <li><img src="images/photo_1.jpg" alt="" /></li>
+                <li><img src="images/photo_2.jpg" alt="" /></li>
+                <li><img src="images/photo_3.jpg" alt="" /></li>
+                <li><img src="images/photo_4.jpg" alt="" /></li>
+            </ul>
+        </section>
+        
+    </article>
+	 <script src="http://www.jq22.com/js/jq.js"></script>
+
+</body>
+</html>

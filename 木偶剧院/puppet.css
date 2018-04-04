@@ -1,0 +1,752 @@
+/*	Paul's Puppet Theatre Presents CSS3 is a CSS3 demo demonstrating some new technics that CSS3 can offer.
+
+    Copyright (C) 2012  Tayo Wegner 
+    Let Pixels Take Over: www.lpto.net.    
+    Email: lpto.net@gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*/
+#eye canvas{
+left: 250px;
+position: relative;
+top: -486px;
+}
+#eye{
+background-image: url("images/head.jpg");
+background-position: 218px 37px;
+background-repeat: no-repeat;
+}
+/*start of wrap */
+.wrap{
+width:950px;
+margin:auto;
+position: relative;
+}
+.clear{
+clear:both;
+}
+/* end of wrap */
+/* start of head section */
+.head{
+border-bottom: 4px double #171717;
+background-color: #405D78;
+}
+.head h1{
+margin-bottom: 0;
+margin-left: 135px;
+margin-top: 0;
+color: #EDEDED;
+}
+/* end of head section */
+/* start of content */
+.content{
+margin-top:200px;
+float:left;
+}
+/*  start of content 2 */
+.content2{
+position:relative;
+background-color: #627E98;
+border: 1px solid #171717;
+float: left;
+height: 500px;
+margin-left: 20px;
+width: 210px;
+}
+.content2 h3{
+color:white;
+font-weight:bold;
+text-align:center;
+border-bottom:4px double white;
+font-family: tahoma;
+}
+/* end of content 2 */
+#window1{
+width:700px;
+height:300px;
+border:1px solid #303030;
+margin: auto;
+position: relative;
+background-color: #C1CAD0;
+}
+#background_theme{
+position: absolute;
+z-index: 1;
+width: 700px;
+}
+#theme_ground{
+left: -145px;
+position: absolute;
+top: 302px;
+width: 988px;
+z-index: 1;
+}
+.ground{
+transform: scaleY(-1) skew(37deg);
+-moz-transform: scaleY(-1) skew(37deg);
+-webkit-transform: scaleY(-1) skew(37deg);
+-o-transform: scaleY(-1) skew(37deg);
+border: 1px solid #303030;
+height: 188px;
+left: -71px;
+margin: auto;
+position: absolute;
+top: 301px;
+width: 700px;
+background-color:#E4E4E4;
+}
+.g2{
+transform: scaleY(1) skew(37deg);
+-moz-transform: scaleY(1) skew(37deg);
+-webkit-transform: scaleY(1) skew(37deg);
+-o-transform: scaleY(1) skew(37deg);
+left: 72px;
+border-left: 0 none;
+}
+/* end of content */
+.hand{
+position:relative;
+z-index:90;
+left: 10px;
+}
+/* fingers */
+
+.rightarm_finger,.leftarm_finger,.leftleg_finger,.rightleg_finger,.middle_finger{
+width:50px;
+height:95px;
+top: -60px;
+border:1px solid #171717;
+position:absolute;
+background-color: #FFEDE7;
+border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+-o-border-radius: 20px 20px 20px 20px;
+
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+box-shadow: -5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: -5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: -5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-o-box-shadow: -5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+}
+
+.leftleg_finger{
+
+}
+.leftarm_finger{
+left:50px;
+}
+.middle_finger{
+left:100px;
+}
+.rightarm_finger{
+left:150px;
+}
+.rightleg_finger{
+height: 70px;
+left: 200px;
+width: 70px;
+}
+/* arm movements */
+.leftarm_finger:hover,.rightarm_finger:hover,.keyboard{
+top: -80px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+.leftarm_finger:hover .l_arm ,.keyboard .l_arm{
+top: 365px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(20deg);
+-moz-transform:rotate(20deg);
+-webkit-transform:rotate(20deg);
+-o-transform:rotate(20deg);
+
+-moz-transform-origin: right top;
+-webkit-transform-origin: right top;
+-o-transform-origin: right top;
+}
+.rightarm_finger:hover .r_arm,.keyboard .r_arm{
+top: 365px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(-20deg);
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+
+transform-origin: left top;
+-moz-transform-origin: left top;
+-webkit-transform-origin: left top;
+-o-transform-origin: left top;
+}
+/* leg movements */
+.leftleg_finger:hover,.rightleg_finger:hover ,.keyboard {
+top: -80px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+.leftleg_finger:hover .l_leg,.keyboard .l_leg{
+top: 445px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(44deg);
+-moz-transform:rotate(44deg);
+-webkit-transform:rotate(44deg);
+-o-transform:rotate(44deg);
+
+-moz-transform-origin: right top;
+-webkit-transform-origin: right top;
+-o-transform-origin: right top;
+}
+.rightleg_finger:hover .r_leg,.keyboard .r_leg{
+top: 432px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(-40deg);
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+
+transform-origin: left top;
+-moz-transform-origin: left top;
+-webkit-transform-origin: left top;
+-o-transform-origin: left top;
+}
+/* middle finger movements */
+.middle_finger:hover .p_head{
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+top:260px;
+}
+.middle_finger:hover .p_body{
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+top:313px;
+}
+.middle_finger:hover{
+top: -40px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+/* puppet */
+.puppet_wrap{
+position: relative;
+top:50px;
+}
+.p_head,.l_arm,.r_arm,.p_body,.l_leg,.r_leg{
+
+background-color: #F8F8F8;
+border: 1px solid #6A6A6A;
+transition-duration: 90ms;
+-moz-transition-duration: 90ms;
+-webkit-transition-duration: 90ms;
+-o-transition-duration: 90ms;
+
+border-radius: 100px 100px 100px 100px;
+-moz-border-radius: 100px 100px 100px 100px;
+-webkit-border-radius: 100px 100px 100px 100px;
+-o-border-radius: 100px 100px 100px 100px;
+}
+.p_head{
+height: 84px;
+left: -13px;
+position: absolute;
+top: 260px;
+width: 84px;
+z-index: 50;
+}
+.l_arm{
+height: 32px;
+
+position: absolute;
+top: 347px;
+width: 70px;
+}
+.r_arm{
+height: 32px;
+left: -9px;
+position: absolute;
+top: 347px;
+width: 70px;
+}
+.p_body{
+border-radius: 80px 80px 80px 80px;
+-moz-border-radius: 80px 80px 80px 80px;
+-webkit-border-radius: 80px 80px 80px 80px;
+-o-border-radius: 80px 80px 80px 80px;
+height: 90px;
+left: 1px;
+position: absolute;
+top: 338px;
+width: 58px;
+z-index: 40;
+}
+.l_leg{
+transform: rotate(15deg);
+-moz-transform: rotate(15deg);
+-webkit-transform: rotate(15deg);
+-o-transform: rotate(15deg);
+height: 75px;
+left: 92px;
+position: absolute;
+top: 411px;
+width: 32px;
+}
+.r_leg{
+transform: rotate(-15deg);
+-moz-transform: rotate(-15deg);
+-webkit-transform: rotate(-15deg);
+-o-transform: rotate(-15deg);
+height: 77px;
+left: -60px;
+position: absolute;
+top: 409px;
+width: 32px;
+}
+/*  end of left hand and left puppet  */
+/*  start of right hand and right puppet  */
+.right_hand{
+position:relative;
+z-index:90;
+left: 437px;
+}
+/* fingers */
+
+.rightarm_finger2,.leftarm_finger2,.leftleg_finger2,.rightleg_finger2,.middle_finger2{
+width:50px;
+height:95px;
+top: -60px;
+border:1px solid #171717;
+position:absolute;
+background-color: #FFEDE7;
+border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+-o-border-radius: 20px 20px 20px 20px;
+
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+box-shadow: 5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+-o-box-shadow: 5px -1px 11px #3D2902 inset, 1px 18px 6px rgba(0, 0, 0, 0.3);
+}
+
+.leftleg_finger2{
+height: 70px;
+width: 70px;
+left: -21px;
+}
+.leftarm_finger2{
+left:50px;
+}
+.middle_finger2{
+left:100px;
+}
+.rightarm_finger2{
+left:150px;
+}
+.rightleg_finger2{
+left: 200px;
+}
+/* arm movements */
+.leftarm_finger2:hover,.rightarm_finger2:hover,.keyboard{
+top: -80px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+.leftarm_finger2:hover .l_arm2,.keyboard .l_arm2{
+top: 367px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(20deg);
+-moz-transform:rotate(20deg);
+-webkit-transform:rotate(20deg);
+-o-transform:rotate(20deg);
+
+transform-origin: right top;
+-moz-transform-origin: right top;
+-webkit-transform-origin: right top;
+-o-transform-origin: right top;
+}
+.rightarm_finger2:hover .r_arm2,.keyboard .r_arm2{
+top: 367px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(-20deg);
+-moz-transform:rotate(-20deg);
+-webkit-transform:rotate(-20deg);
+-o-transform:rotate(-20deg);
+
+transform-origin: left top;
+-moz-transform-origin: left top;
+-webkit-transform-origin: left top;
+-o-transform-origin: left top;
+}
+/* leg movements */
+.leftleg_finger2:hover,.rightleg_finger2:hover,.keyboard{
+top: -80px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+.leftleg_finger2:hover .l_leg2,.keyboard .l_leg2{
+left: 118px;
+top: 450px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(44deg);
+-moz-transform:rotate(44deg);
+-webkit-transform:rotate(44deg);
+-o-transform:rotate(44deg);
+
+transform-origin: right top;
+-moz-transform-origin: right top;
+-webkit-transform-origin: right top;
+-o-transform-origin: right top;
+}
+.rightleg_finger2:hover .r_leg2,.keyboard .r_leg2{
+left: -66px;
+top: 442px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+
+transform:rotate(-40deg);
+-moz-transform:rotate(-40deg);
+-webkit-transform:rotate(-40deg);
+-o-transform:rotate(-40deg);
+
+transform-origin: left top;
+-moz-transform-origin: left top;
+-webkit-transform-origin: left top;
+-o-transform-origin: left top;
+}
+/* middle finger movements */
+.middle_finger2:hover .p_head2{
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+top:260px;
+}
+.middle_finger2:hover .p_body2{
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+top:313px;
+}
+.middle_finger2:hover{
+top: -40px;
+transition-duration: 98ms;
+-moz-transition-duration: 98ms;
+-webkit-transition-duration: 98ms;
+-o-transition-duration: 98ms;
+}
+/*puppet head and body keyboard fix - Dont ask me how or why it works!*/
+/* fixes bug that pushes all limbs down to new positions */
+.keyboard1,.keyboard2 {
+top:-40px;
+}
+.keyboard1 .p_head,.keyboard2 .p_head2 {
+top:260px;
+}
+.keyboard1 .p_body,.keyboard2 .p_body2{
+top:313px;
+}
+/* end of key board fix */
+/* puppet */
+.puppet_wrap2{
+position: relative;
+top:50px;
+}
+.p_head2,.l_arm2,.r_arm2,.p_body2,.l_leg2,.r_leg2{
+background-color: #F8F8F8;
+border: 1px solid #6A6A6A;
+transition-duration: 90ms;
+-moz-transition-duration: 90ms;
+-webkit-transition-duration: 90ms;
+-o-transition-duration: 90ms;
+
+border-radius: 100px 100px 100px 100px;
+-moz-border-radius: 100px 100px 100px 100px;
+-webkit-border-radius: 100px 100px 100px 100px;
+-o-border-radius: 100px 100px 100px 100px;
+}
+.p_head2{
+height: 84px;
+left: -13px;
+position: absolute;
+top: 260px;
+width: 84px;
+z-index: 50;
+}
+.l_arm2{
+transform: rotate(-39deg);
+-moz-transform: rotate(-39deg);
+-webkit-transform: rotate(-39deg);
+-o-transform: rotate(-39deg);
+height: 32px;
+left: 3px;
+position: absolute;
+top: 360px;
+width: 70px;
+}
+.r_arm2{
+transform: rotate(39deg);
+-moz-transform: rotate(39deg);
+-webkit-transform: rotate(39deg);
+-o-transform: rotate(39deg);
+height: 32px;
+left: -12px;
+position: absolute;
+top: 359px;
+width: 70px;
+}
+.p_body2{
+border-radius: 80px 80px 80px 80px;
+-moz-border-radius: 80px 80px 80px 80px;
+-webkit-border-radius: 80px 80px 80px 80px;
+-o-border-radius: 80px 80px 80px 80px;
+height: 90px;
+left: 1px;
+position: absolute;
+top: 338px;
+width: 58px;
+z-index: 40;
+}
+.l_leg2{
+transform: rotate(15deg);
+-moz-transform: rotate(15deg);
+-webkit-transform: rotate(15deg);
+-o-transform: rotate(15deg);
+height: 75px;
+left: 111px;
+position: absolute;
+top: 411px;
+width: 32px;
+}
+.r_leg2{
+transform: rotate(-15deg);
+-moz-transform: rotate(-15deg);
+-webkit-transform: rotate(-15deg);
+-o-transform: rotate(-15deg);
+height: 77px;
+left: -60px;
+position: absolute;
+top: 409px;
+width: 32px;
+}
+/*  end of right hand and right puppet */
+/* cowboy left puppet theme */
+.cowboy{
+display:none;
+}
+.rifle{
+transform: rotate(-22deg);
+-moz-transform: rotate(-22deg);
+-webkit-transform: rotate(-22deg);
+-o-transform: rotate(-22deg);
+left: -20px;
+position: absolute;
+top: -109px;
+}
+.hat{
+left: -19px;
+position: absolute;
+top: -13px;
+}
+.vest{
+left: -11px;
+position: absolute;
+top: 3px;
+}
+/* end of cowboy left puppet theme */
+/* knight left puppet theme */
+.knight{
+display:none;
+}
+.sword{
+transform: rotate(20deg);
+-moz-transform: rotate(20deg);
+-webkit-transform: rotate(20deg);
+-o-transform: rotate(20deg);
+left: 47px;
+position: absolute;
+top: -109px;
+}
+.shield{
+transform: rotate(4deg);
+-moz-transform: rotate(4deg);
+-webkit-transform: rotate(4deg);
+-o-transform: rotate(4deg);
+left: -40px;
+position: absolute;
+top: -38px;
+}
+.amour{
+left: -10px;
+position: absolute;
+top: -7px;
+}
+/* end of knight left puppet theme */
+/* cowboy right puppet theme */
+.cowboy2{
+display:none;
+}
+.pistol{
+transform: rotate(-6deg);
+-moz-transform: rotate(-6deg);
+-webkit-transform: rotate(-6deg);
+-o-transform: rotate(-6deg);
+left: 48px;
+position: absolute;
+top: -11px;
+}
+.hat2{
+left: -31px;
+position: absolute;
+top: -13px;
+}
+.bullet_vest{
+left: -14px;
+position: absolute;
+top: 3px;
+}
+/* end of cowboy right puppet theme */
+.knight2{
+display:none;
+}
+.dress{
+left: -27px;
+position: absolute;
+top: 0px;
+}
+.flower{
+left: 45px;
+position: absolute;
+top: -13px;
+}
+/* end of knight left puppet theme */
+/* start of  small background themes*/
+.imgset_small{
+border: 1px solid white;
+height: 40px;
+margin-left: 20px;
+width: 40px;
+float: left;
+}
+.bg1{
+background-color: #516B89;
+border: 1px solid white;
+display: block;
+height: 40px;
+margin-left: 20px;
+width: 40px;
+float: left;
+}
+.theme_links{
+color: white;
+display: block;
+font-size: 13px;
+position: absolute;
+margin-top: 42px;
+}
+.dollone{
+background-image: url("images/dollone.jpg");
+}
+.dolltwo{
+background-image: url("images/dolltwo.jpg");
+}
+
+.pcowboy1{
+background-image: url("images/cowboy1.jpg");
+}
+.pcowboy2{
+background-image: url("images/cowboy2.jpg");
+}
+
+.pknight{
+background-image: url("images/knight.jpg");
+}
+.pprincess{
+background-image: url("images/princess.jpg");
+}
+
+/* start of footer */
+.footer{
+margin-top: 100px;
+}
+.pkeys{
+float: left;
+width: 300px;
+}
+.pkeys{
+list-style:none;
+}
+.back{
+color:cornflowerblue;
+text-decoration:none;
+}
+.back_lpto{
+text-align: center;
+width: 455px;
+}
+/* end of footer */
+
+/*...< tw 2012 lpto.net >...*/

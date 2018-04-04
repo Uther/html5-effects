@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>Uther & Delia</title>
+	
+	<link rel="stylesheet" type="text/css" href="./jquery.funnyText.css" />
+	<style>
+		.text1{
+			display:block;
+			text-align:center;
+		}
+		body{
+			font-family:arial;
+		}
+		
+		
+		/* Web design
+		* --------------------------------------- */
+		.table{
+			display:table;
+			width:100%;
+			height: 100%;
+		}
+		.tableCell{
+			display:table-cell;
+			vertical-align: middle;
+			width:100%;
+			height: 100%;
+		}
+		
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+		
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="./jquery-ui.min.js"></script>	
+	
+	<script type="text/javascript" src="./jquery.funnyText.js"></script>
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('.text1').funnyText({
+				speed: 700,
+				activeColor: '#fff',
+				color: 'black',
+				fontSize: '8em'
+			});
+		});
+	</script>
+</head>
+<body>
+
+<div class="table">
+	<div class="tableCell">
+		<div class="text1">Uther & Delia</div>
+	</div>
+</div>
+
+</body>
+</html>

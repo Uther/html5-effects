@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+
+<title>Paul's Puppet Theatre Presents CSS3</title>
+
+<meta name="description" content="Paul&#39;s Puppet Theatre Presents CSS3 created by Tayo Wegner at lpto.net">
+
+<meta name="author" content="Tayo Wegner">
+
+<link rel="stylesheet" href="puppet.css" type="text/css">
+
+<script src="jquery.js"></script>
+
+<script src="jquery-1.6.2.min.js" type="text/javascript"></script>
+
+<!-- 
+
+	Paul's Puppet Theatre Presents CSS3 and it's image content 
+
+	is a CSS3 demo demonstrating new technics that CSS3 can offer.
+
+
+
+    Copyright (C) 2012  Tayo Wegner 
+
+    Let Pixels Take Over: www.lpto.net.    
+
+    Email: lpto.net@gmail.com
+
+
+
+    This program is free software: you can redistribute it and/or modify
+
+    it under the terms of the GNU General Public License as published by
+
+    the Free Software Foundation, either version 3 of the License, or
+
+    (at your option) any later version.
+
+
+
+    This program is distributed in the hope that it will be useful,
+
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+
+    GNU General Public License for more details.
+
+
+
+    You should have received a copy of the GNU General Public License
+
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+-->
+
+<script type="text/javascript">
+
+
+
+$(document).ready(function(){
+
+		// left hand 
+
+		// add the keydown handler to fake hovering using the keyboard
+
+			$(window).keydown(function(e) {
+
+				if (e.which == 65) $(".leftleg_finger").addClass("keyboard"); // A left leg
+
+				if (e.which == 83) $(".leftarm_finger").addClass("keyboard"); // S left arm
+
+				if (e.which == 69) $(".middle_finger").addClass("keyboard1"); // E head
+
+				
+
+				if (e.which == 68) $(".rightarm_finger").addClass("keyboard"); // D right arm
+
+				if (e.which == 70) $(".rightleg_finger").addClass("keyboard"); // F right leg
+
+			});
+
+		// add the keyup handler to fake hovering using the keyboard
+
+			$(window).keyup(function(e) {
+
+				if (e.which == 65) $(".leftleg_finger").removeClass("keyboard"); // A left leg
+
+				if (e.which == 83) $(".leftarm_finger").removeClass("keyboard"); // S left arm
+
+				if (e.which == 69) $(".middle_finger").removeClass("keyboard1"); // E head
+
+				
+
+				if (e.which == 68) $(".rightarm_finger").removeClass("keyboard"); // D right arm
+
+				if (e.which == 70) $(".rightleg_finger").removeClass("keyboard"); // F right leg
+
+			});
+
+			
+
+		// right hand
+
+		//keydown handler
+
+			$(window).keydown(function(e) {
+
+				if (e.which == 72) $(".leftleg_finger2").addClass("keyboard"); // H left leg
+
+				if (e.which == 74) $(".leftarm_finger2").addClass("keyboard"); // J left arm
+
+				if (e.which == 85) $(".middle_finger2").addClass("keyboard2"); // U head
+
+				
+
+				if (e.which == 75) $(".rightarm_finger2").addClass("keyboard"); // K right arm
+
+				if (e.which == 76) $(".rightleg_finger2").addClass("keyboard"); // L right leg
+
+			});
+
+		// keyup handler 
+
+			$(window).keyup(function(e) {
+
+				if (e.which == 72) $(".leftleg_finger2").removeClass("keyboard"); // H left leg
+
+				if (e.which == 74) $(".leftarm_finger2").removeClass("keyboard"); // J left arm
+
+				if (e.which == 85) $(".middle_finger2").removeClass("keyboard2"); // U head
+
+				
+
+				if (e.which == 75) $(".rightarm_finger2").removeClass("keyboard"); // K right arm
+
+				if (e.which == 76) $(".rightleg_finger2").removeClass("keyboard"); // L right leg
+
+			});
+
+});	
+
+</script>
+
+<script type="text/javascript">
+
+//canvas eye mousePos created by Andrew Stibbard www.xhva.net
+
+//moving eye
+
+	var eye = function() {
+
+		this.canvas = document.createElement("canvas");
+
+		this.canvas.width = "102";
+
+		this.canvas.height = "102";
+
+		this.context = this.canvas.getContext("2d");
+
+		this.white = {
+
+			x: (this.canvas.width / 2) - ((this.canvas.width - 2) / 2),
+
+			y: (this.canvas.height / 2) - ((this.canvas.width - 2) / 2),
+
+			radius: (this.canvas.width - 2) / 2
+
+		};
+
+		this.point = {
+
+			x: this.white.x + this.white.radius - 20,
+
+			y: this.white.y + this.white.radius - 20,
+
+			radius: 20
+
+		};
+
+		this.pointDraw = {
+
+			x: this.point.x,
+
+			y: this.point.x,
+
+			radius: this.point.radius
+
+		};
+
+		this.draw = function(mousex, mousey) {
+
+			var cCenter = this.getWhiteCenterOnScreen();
+
+			var w = cCenter.x - mousex;
+
+			var h = cCenter.y - mousey;
+
+			var tanx = h / w;
+
+			atanx = Math.atan(tanx); // (result in radians)
+
+			if (mousex <= cCenter.x) {
+
+				atanx = atanx + Math.PI;
+
+			}
+
+			else {
+
+				atanx = atanx + Math.PI * 2;
+
+			}
+
+			
+
+			var drawPointX = (this.point.x) + (Math.cos(atanx) * this.point.x);
+
+			var drawPointY = (this.point.y) + (Math.sin(atanx) * this.point.y);
+
+			
+
+			var context = this.context;
+
+			context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+			
+
+			// white
+
+			context.beginPath();
+
+			context.strokeStyle = "gray";
+
+			context.fillStyle = "#eeeeee";
+
+			context.lineWidth = ".5";
+
+			context.arc(this.white.x + this.white.radius, this.white.y + this.white.radius, this.white.radius, 0, Math.PI * 2, false);
+
+			context.fill();
+
+			context.stroke();
+
+			context.closePath();
+
+			
+
+			// point
+
+			context.beginPath();
+
+			context.strokeStyle = "#aaaaaa";
+
+			context.fillStyle = "#cccccc";
+
+			context.lineWidth = ".5";
+
+			context.arc(drawPointX + this.pointDraw.radius, drawPointY + this.pointDraw.radius, this.pointDraw.radius, 0, Math.PI * 2, false);
+
+			context.fill();
+
+			context.stroke();
+
+			context.closePath();
+
+		};
+
+		this.getWhiteCenterOnScreen = function() {
+
+			var cx = $(this.canvas).offset().left;
+
+			var cy = $(this.canvas).offset().top;
+
+			return {
+
+				x: cx + this.white.x + this.white.radius, //this.canvas.width / 2,
+
+				y: cy + this.white.y + this.white.radius // this.canvas.height / 2
+
+			}
+
+		}
+
+		this.appendTo = function(el) {
+
+			if (!el) return false;
+
+			el.appendChild(this.canvas);
+
+		};
+
+	}
+
+
+
+	window.addEventListener(
+
+		"load",
+
+		function() {
+
+			
+
+			// create the eyes
+
+			var eyes = [];
+
+			for (var i = 0; i < 2; i++) {
+
+				eyes.push(new eye());
+
+				eyes[eyes.length - 1].appendTo(document.getElementById("eye"));
+
+			}
+
+			
+
+			// create an event handler to capture the mouse coords
+
+			document.getElementById("eye").addEventListener(
+
+				"mousemove",
+
+				function(e) {
+
+					// new coords
+
+					var mousex = window.scrollX + e.clientX;
+
+					var mousey = window.scrollY + e.clientY;
+
+										
+
+					var eyesLen = eyes.length;
+
+					for (var i = 0; i < eyesLen; i++) {
+
+						eyes[i].draw(mousex, mousey);
+
+					}
+
+				},
+
+				null
+
+			);
+
+		},
+
+		null
+
+	);
+
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+//Puppet Themes
+
+	switchImage = function(file) {
+
+		big_image = document.getElementById("background_theme");
+
+		big_image.src = file;
+
+		return false;
+
+	}
+
+	switchGround = function(file) {
+
+		ground_theme = document.getElementById("theme_ground");
+
+		ground_theme.src = file;
+
+		ground_theme.style.borderBottom = '1px solid #171717';
+
+		return false;
+
+	}
+
+	//puppet one themes
+
+	defaultOutfit = function(){
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[0].style.display = 'none'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[1].style.display = 'none'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[2].style.display = 'none'
+
+		knight_theme = document.getElementsByClassName('knight')[0].style.display = 'none'
+
+		knight_theme = document.getElementsByClassName('knight')[1].style.display = 'none'
+
+		knight_theme = document.getElementsByClassName('knight')[2].style.display = 'none'
+
+	}
+
+	cowboyOutfit = function(){
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[0].style.display = 'block'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[1].style.display = 'block'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[2].style.display = 'block'
+
+		//none
+
+		knight_theme = document.getElementsByClassName('knight')[0].style.display = 'none'
+
+		knight_theme = document.getElementsByClassName('knight')[1].style.display = 'none'
+
+		knight_theme = document.getElementsByClassName('knight')[2].style.display = 'none'
+
+	}
+
+	
+
+	knightOutfit = function(){
+
+		knight_theme = document.getElementsByClassName('knight')[0].style.display = 'block'
+
+		knight_theme = document.getElementsByClassName('knight')[1].style.display = 'block'
+
+		knight_theme = document.getElementsByClassName('knight')[2].style.display = 'block'
+
+		//none
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[0].style.display = 'none'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[1].style.display = 'none'
+
+		cowboy_theme = document.getElementsByClassName('cowboy')[2].style.display = 'none'
+
+	}
+
+	//I know the coding for this is awful
+
+	//puppet two themes
+
+	defaultOutfit2 = function(){
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[0].style.display = 'none'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[1].style.display = 'none'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[2].style.display = 'none'
+
+		princess_theme = document.getElementsByClassName('knight2')[0].style.display = 'none'
+
+		princess_theme = document.getElementsByClassName('knight2')[1].style.display = 'none'
+
+	}
+
+	cowboyOutfit2 = function(){
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[0].style.display = 'block'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[1].style.display = 'block'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[2].style.display = 'block'
+
+		//none
+
+		princess_theme = document.getElementsByClassName('knight2')[0].style.display = 'none'
+
+		princess_theme = document.getElementsByClassName('knight2')[1].style.display = 'none'
+
+	}
+
+	
+
+	princessOutfit = function(){
+
+		princess_theme = document.getElementsByClassName('knight2')[0].style.display = 'block'
+
+		princess_theme = document.getElementsByClassName('knight2')[1].style.display = 'block'
+
+		//none
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[0].style.display = 'none'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[1].style.display = 'none'
+
+		cowboy_theme2 = document.getElementsByClassName('cowboy2')[2].style.display = 'none'
+
+		
+
+	}
+
+</script>
+
+</head>
+
+<body>
+
+
+
+	<div class="wrap">
+
+		<div id="eye">
+
+		<div class="head">
+
+			<h1>Paul's Puppet Theatre Presents CSS3</h1>
+
+		</div>
+
+		
+
+		<div class="content">
+
+			<div id="window1">
+
+				<img src="csback.jpg" id="background_theme" alt=""><!-- window for background themes -->
+
+				<div class="hand">
+
+					<div class="leftleg_finger">
+
+						<div class="l_leg"></div>
+
+					</div><!-- end of leftleg_finger -->
+
+					<div class="leftarm_finger">
+
+						<div class="l_arm">
+
+							<img src="cowboy_rif.png" alt="image of a rifle" class="rifle cowboy" style="display: none;">
+
+							<img src="kinght_sh.png" alt="image of a shield" class="shield knight" style="display: block;">
+
+						</div>
+
+					</div><!-- end of leftarm_finger -->
+
+					<div class="middle_finger">
+
+						<div class="p_head">
+
+							<img src="cowboy_hat.png" alt="image of a cowboy hat" class="hat cowboy" style="display: none;">
+
+						</div>
+
+						
+
+						<div class="p_body">
+
+							<img src="cowboy_vest.png" alt="image of a cowboy vest" class="vest cowboy" style="display: none;">
+
+							<img src="kinght_ar.png" alt="image of a knight amour" class="amour knight" style="display: block;">
+
+						</div>
+
+						
+
+					</div><!-- end of middle_finger -->
+
+					<div class="rightarm_finger">
+
+						<div class="r_arm">
+
+							<img src="kinght_sw.png" alt="image of a sword" class="sword knight" style="display: block;">
+
+						</div>
+
+					</div><!-- end of rightarm_finger -->
+
+					<div class="rightleg_finger">
+
+						<div class="r_leg"></div>
+
+					</div><!-- end of rightleg_finger -->
+
+				</div><!-- end of hand -->
+
+				
+
+				<div class="right_hand"><!-- start of puppet two -->
+
+					<div class="leftleg_finger2">
+
+						<div class="l_leg2"></div>
+
+					</div><!-- end of leftleg_finger -->
+
+					<div class="leftarm_finger2">
+
+						<div class="l_arm2"></div>
+
+					</div><!-- end of leftarm_finger -->
+
+					<div class="middle_finger2">
+
+						<div class="p_head2">
+
+							<img src="cowboy_hat2.png" alt="image of a cowboy puppet two hat" class="hat2 cowboy2" style="display: none;">
+
+							<img src="kinght_fl.png" alt="image of a flower" class="flower knight2" style="display: block;">
+
+						</div>
+
+						<div class="p_body2">
+
+							<img src="cowboy_belts.png" alt="image of a cowboy puppet two vest" class="bullet_vest cowboy2" style="display: none;">
+
+							<img src="kinght_dess.png" alt="image of a dress" class="dress knight2" style="display: block;">
+
+						</div>
+
+					</div><!-- end of middle_finger -->
+
+					<div class="rightarm_finger2">
+
+						<div class="r_arm2">
+
+							<img src="cowboy_gun.png" alt="image of a pistol" class="pistol cowboy2" style="display: none;">
+
+						</div>
+
+					</div><!-- end of rightarm_finger -->
+
+					<div class="rightleg_finger2">
+
+						<div class="r_leg2"></div>
+
+					</div><!-- end of rightleg_finger -->
+
+				</div><!-- end of right_hand -->
+
+				<img src="csground.jpg" id="theme_ground" alt="" style="border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(23, 23, 23);"><!-- window for background themes -->
+
+				<div class="ground"></div><!-- css for background themes -->
+
+				<div class="ground g2"></div><!-- css for background themes -->
+
+			</div><!-- end of window1 -->
+
+			
+
+		</div>
+
+		
+
+		<!-- background theme links -->
+
+		<div class="content2">
+
+			<h3>Backgrounds</h3>
+
+			<a href="http://139.129.17.2/demo/css3moou-141117175613/images/plain.jpg" onclick="return switchImage(&#39;images/plain.jpg&#39;)">
+
+				<img src="plain_small.jpg" class="imgset_small" alt="">
+
+			</a>
+
+			<a href="http://139.129.17.2/demo/css3moou-141117175613/images/cbback.jpg" onclick="return switchImage(&#39;images/cbback.jpg&#39;)">
+
+				<img src="cbback_small.jpg" class="imgset_small" alt="picture of coyboy background">
+
+			</a>
+
+			<a href="csback.jpg" onclick="return switchImage(&#39;images/csback.jpg&#39;)">
+
+				<img src="csback_small.jpg" class="imgset_small" alt="picture of knight background">
+
+			</a>
+
+			<div class="clear"></div>
+
+			<h3>Grounds</h3>
+
+			<a href="http://139.129.17.2/demo/css3moou-141117175613/images/stage.jpg" onclick="return switchGround(&#39;images/stage.jpg&#39;)">
+
+				<img src="stage_small.jpg" class="imgset_small" alt="">
+
+			</a>
+
+			<a href="http://139.129.17.2/demo/css3moou-141117175613/images/cbground.jpg" onclick="return switchGround(&#39;images/cbground.jpg&#39;)">
+
+				<img src="cbground_small.jpg" class="imgset_small" alt="picture of cowboy ground background">
+
+			</a>
+
+			<a href="csground.jpg" onclick="return switchGround(&#39;images/csground.jpg&#39;)">
+
+				<img src="csground_small.jpg" class="imgset_small" alt="picture of kinght ground background">
+
+			</a>
+
+			<div class="clear"></div>
+
+			<!-- puppet theme links -->
+
+			<h3>Left Puppet Themes</h3>
+
+			<a href="saved_resource.html" class="bg1 dollone" onclick="defaultOutfit()"><span class="theme_links">Default</span></a>
+
+			<a href="saved_resource.html" class="bg1 pcowboy1" onclick="cowboyOutfit()"><span class="theme_links">Cowboy</span></a>
+
+			<a href="saved_resource.html" class="bg1 pknight" onclick="knightOutfit()"><span class="theme_links">Knight</span></a>
+
+			<div class="clear"></div>
+
+			<h3>Right Puppet Themes</h3>
+
+			<a href="saved_resource.html" class="bg1 dolltwo" onclick="defaultOutfit2()"><span class="theme_links">Default</span></a>
+
+			<a href="saved_resource.html" class="bg1 pcowboy2" onclick="cowboyOutfit2()"><span class="theme_links">Cowboy</span></a>
+
+			<a href="saved_resource.html" class="bg1 pprincess" onclick="princessOutfit()"><span class="theme_links">Princess</span></a>
+
+			<div class="clear"></div>
+
+		</div>
+
+		
+
+		<canvas width="102" height="102"></canvas><canvas width="102" height="102"></canvas></div><!-- end of eye-->
+
+		<div class="clear"></div>
+
+		<div class="footer">
+
+			<h2>Paul's Puppet Theatre Presents CSS3 (version one)</h2>
+
+			<p>Hover over the fingers to move the puppets or use the following keys</p>
+
+			<div class="pkeys">
+
+				<h3 class="pkeys">Puppet one:</h3>
+
+				<ul class="pkeys">
+
+					<li>A = Left leg</li>
+
+					<li>S = Left arm</li>
+
+					<li>E = Head</li>
+
+					<li>D = Right arm</li>
+
+					<li>F = Right leg</li>
+
+				</ul>
+
+			</div>
+
+			<div class="pkeys">
+
+			<h3 class="pkeys">Puppet two:</h3>
+
+				<ul class="pkeys">
+
+					<li>H = Left leg</li>
+
+					<li>J = Left arm</li>
+
+					<li>U = Head</li>
+
+					<li>K = Right arm</li>
+
+					<li>L = Right leg</li>
+
+				</ul>
+
+			</div>
+
+			<div class="clear"></div>
+
+			<p>CSS3 demo is best viewed with Firefox followed by Chrome</p>
+
+		</div>
+
+	</div>
+
+
+
+<!-- let pixels take over @ lpto.net - tayo wegner 2012 --></body></html>

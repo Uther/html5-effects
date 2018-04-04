@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jQuery Tip Cards by Pete R. | The Pete Design</title>
+	<meta name="title" content="jQuery Tip Cards by Pete R. | The Pete Design" />
+	<link rel="image_src" href="/images/tip_cards_image.png" />
+
+	<link href='tip_cards.css' rel='stylesheet' type='text/css'>
+	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="jquery.tip_cards.js"></script>
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #E5E8ED;
+      padding: 0;
+      text-align: center;
+      font-family: 'Open Sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizelegibility;
+    }
+    
+    a {
+      color: black;
+    }
+    
+    .header {
+      padding: 30px 0 0;
+      float: left;
+      width: 100%;
+      background: white;
+    }
+    .wrapper {
+    	height: auto !important;
+    	height: 100%;
+    	margin: 0 auto; 
+    	overflow: hidden;
+    }
+	.page-container li{width:200px;}
+    .main {
+      float: left;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .clear {
+      width: auto;
+    }
+    
+    .page-container {
+      max-width: 505px;
+      margin: auto;
+      position: relative;
+    }
+
+    .tip {
+      display: none;
+    }
+    
+    
+	</style>
+	<script>
+	  $(document).ready( function() {
+	    $(document).ready( function() {
+  	    $(".tips").tip_cards();
+  	  });
+	  });
+		
+	</script>
+</head>
+<body>
+  <div class="wrapper">
+	  <div class="main">
+  	  
+      <div class="page-container">
+        <ul class="tips">
+          <li>
+
+            	<a href="#tip1">Tip 1: See What videos your friends are posting and adjust friendships accordingly.</a>
+
+          </li>
+          <li>
+
+            	<a href="#tip2">Tip 2: See What videos your friends are posting and adjust friendships accordingly.</a>
+
+          </li>
+          <li>
+
+            	<a href="#tip3">Tip 3: See What videos your friends are posting and adjust friendships accordingly.</a>
+
+          </li>
+          <li>
+
+            	<a href="#tip4">Tip 4: See What videos your friends are posting and adjust friendships accordingly.</a>
+
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>
