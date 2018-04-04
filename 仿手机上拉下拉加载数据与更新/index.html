@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)http://139.129.17.2/demo/fresh-150703141758/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>pull to refresh</title>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<link rel="stylesheet" href="http://139.129.17.2/demo/fresh-150703141758/pullToRefresh.css">
+
+<script src="iscroll.js"></script>
+
+<script src="pullToRefresh.js"></script>
+
+<style type="text/css" media="all">
+
+body, html {
+
+	padding: 0;
+
+	margin: 0;
+
+	height: 100%;
+
+	font-family: Arial, Helvetica, sans-serif;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!--must content ul-->
+
+<div id="wrapper" style="overflow: hidden;">
+
+  
+
+<div id="scroller" style="transition-property: transform; -webkit-transition-property: transform; transform-origin: 0px 0px 0px; transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); -webkit-transition-timing-function: cubic-bezier(0.33, 0.66, 0.66, 1); transform: translate(0px, -40px) scale(1) translateZ(0px); transition-duration: 400ms; -webkit-transition-duration: 400ms;"><div id="pullDown"><div class="loader"><span></span><span></span><span></span><span></span></div><div class="pullDownLabel">Pull down to refresh...</div></div><ul>
+
+    <li>row 11</li>
+
+    <li>row 10</li>
+
+    <li>row 9</li>
+
+    <li>row 8</li>
+
+    <li>row 7</li>
+
+    <li>row 6</li>
+
+    <li>row 5</li>
+
+    <li>row 4</li>
+
+    <li>row 3</li>
+
+    <li>row 2</li>
+
+    <li>row 1</li>
+
+  </ul><div id="pullUp"><div class="loader"><span></span><span></span><span></span><span></span></div><div class="pullUpLabel">Pull up to load more...</div></div></div></div>
+
+
+
+<script>
+
+refresher.init({
+
+	id:"wrapper",
+
+	pullDownAction:Refresh,
+
+	pullUpAction:Load
+
+	});
+
+		
+
+	var generatedCount = 0;
+
+function Refresh() {
+
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+
+		var el, li, i;
+
+		el =document.querySelector("#wrapper ul");
+
+		el.innerHTML='';
+
+		for (i=0; i<11; i++) {
+
+			li = document.createElement('li');
+
+			li.appendChild(document.createTextNode('async row ' + (++generatedCount)));
+
+		el.insertBefore(li, el.childNodes[0]);
+
+		}	
+
+		myScroll.refresh();/****remember to refresh when you action was completed！！！****/
+
+	}, 1000);
+
+}
+
+
+
+function Load() {
+
+	setTimeout(function () {// <-- Simulate network congestion, remove setTimeout from production!
+
+		var el, li, i;
+
+		el =document.querySelector("#wrapper ul");
+
+		for (i=0; i<2; i++) {
+
+			li = document.createElement('li');
+
+			li.appendChild(document.createTextNode('async row ' + (++generatedCount)));
+
+			el.appendChild(li, el.childNodes[0]);
+
+		}
+
+		myScroll.refresh();/****remember to refresh when you action was completed！！！****/
+
+	}, 1000);
+
+}
+
+</script>
+
+
+
+</body></html>
